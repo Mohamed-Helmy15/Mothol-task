@@ -1,0 +1,667 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.page {
+  padding: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.measure-page {
+  min-height: 100vh;
+  background-image: url("../images/img-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page h1 {
+  text-align: center;
+  padding: 10px;
+}
+.page .landing {
+  min-height: calc(100vh - 57px);
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 520px) {
+  .page .landing {
+    flex-direction: column;
+  }
+}
+.page .landing .info {
+  flex: 0.5;
+  padding: 20px;
+}
+.page .landing .info > h3 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 27px;
+  padding-bottom: 20px;
+}
+.page .landing .info > h3 > span {
+  position: relative;
+  font-size: 40px;
+}
+.info p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.info button {
+  background-color: #57c778;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info button:hover {
+  background-color: rgb(15 157 57);
+}
+.page .landing .info > h3 > span::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 125px;
+  height: 3px;
+  background-color: #57c778;
+}
+
+/* start-form */
+
+.register,
+.card {
+  flex: 0.5;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.card {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register h2,
+.card h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.register .user-box {
+  position: relative;
+}
+
+.register .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.register .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.register .user-box input:focus ~ label,
+.register .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #57c778;
+  font-size: 12px;
+}
+
+.btn {
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  color: #57c778;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.btn:hover {
+  background: #57c778;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #57c778, 0 0 25px #57c778, 0 0 50px #57c778,
+    0 0 100px #57c778;
+}
+
+.btn span {
+  position: absolute;
+  display: block;
+}
+
+.btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #57c778);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #57c778);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #57c778);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #57c778);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+/* end-form */
+
+.wrapper {
+  width: 400px;
+  height: 400px;
+  margin: 90px auto;
+  position: relative;
+}
+
+.wrapper > span {
+  display: inline-block;
+  font-size: 24px;
+  color: #ff0000;
+  position: absolute;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/suit.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.measure-neck {
+  position: absolute;
+  left: -40px;
+  transform: translate(200px, -65px);
+  -webkit-transform: translate(200px, -65px);
+  -moz-transform: translate(200px, -65px);
+  -ms-transform: translate(200px, -65px);
+  -o-transform: translate(200px, -65px);
+}
+
+.measure-neck::before {
+  content: "-------▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: black;
+  transform: translate(33px, 42px) rotate(78deg);
+  -webkit-transform: translate(33px, 42px) rotate(78deg);
+  -moz-transform: translate(33px, 42px) rotate(78deg);
+  -ms-transform: translate(33px, 42px) rotate(78deg);
+  -o-transform: translate(33px, 42px) rotate(78deg);
+}
+.measure-neck::after {
+  content: "---------▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: black;
+  transform: translate(7px, 42px) rotate(131deg);
+  -webkit-transform: translate(7px, 42px) rotate(131deg);
+  -moz-transform: translate(7px, 42px) rotate(131deg);
+  -ms-transform: translate(7px, 42px) rotate(131deg);
+  -o-transform: translate(7px, 42px) rotate(131deg);
+}
+
+.wrapper input {
+  position: relative;
+  width: 70px;
+  height: 30px;
+  padding: 0 10px;
+  outline: none;
+  border-radius: 9px;
+}
+
+.measure-arm {
+  position: absolute;
+  transform: translate(295px, 75px) rotate(67deg);
+  -webkit-transform: translate(295px, 75px) rotate(67deg);
+  -moz-transform: translate(295px, 75px) rotate(67deg);
+  -ms-transform: translate(295px, 75px) rotate(67deg);
+  -o-transform: translate(295px, 75px) rotate(67deg);
+}
+
+.measure-arm::before {
+  content: "--------------------------------▸";
+  position: absolute;
+  width: 202px;
+  color: black;
+  transform: translate(-36px, 57px) rotate(9deg);
+  -webkit-transform: translate(-36px, 57px) rotate(9deg);
+  -moz-transform: translate(-36px, 57px) rotate(9deg);
+  -ms-transform: translate(-36px, 57px) rotate(9deg);
+  -o-transform: translate(-36px, 57px) rotate(9deg);
+}
+
+.measure-arm::after {
+  content: "--------";
+  position: absolute;
+  width: 170px;
+  left: -15px;
+  top: 0;
+  color: black;
+  transform: translate(-85px, 79px) rotate(135deg);
+  -webkit-transform: translate(-85px, 79px) rotate(135deg);
+  -moz-transform: translate(-85px, 79px) rotate(135deg);
+  -ms-transform: translate(-85px, 79px) rotate(135deg);
+  -o-transform: translate(-85px, 79px) rotate(135deg);
+}
+
+.measure-shoulder {
+  position: absolute;
+  transform: translate(312px, -50px) rotate(43deg);
+  -webkit-transform: translate(312px, -50px) rotate(43deg);
+  -moz-transform: translate(312px, -50px) rotate(43deg);
+  -ms-transform: translate(312px, -50px) rotate(43deg);
+  -o-transform: translate(312px, -50px) rotate(43deg);
+}
+
+.measure-shoulder::before {
+  content: "----------------▸";
+  position: absolute;
+  left: -15px;
+  top: 0px;
+  width: 202px;
+  color: black;
+  transform: translate(-68px, 121px) rotate(100deg);
+  -webkit-transform: translate(-68px, 121px) rotate(100deg);
+  -moz-transform: translate(-68px, 121px) rotate(100deg);
+  -ms-transform: translate(-68px, 121px) rotate(100deg);
+  -o-transform: translate(-68px, 121px) rotate(100deg);
+}
+
+.measure-shoulder::after {
+  content: "--------------------▸";
+  position: absolute;
+  width: 170px;
+  left: -15px;
+  top: 0;
+  color: black;
+  transform: translate(-80px, 93px) rotate(121deg);
+  -webkit-transform: translate(-80px, 93px) rotate(121deg);
+  -moz-transform: translate(-80px, 93px) rotate(121deg);
+  -ms-transform: translate(-80px, 93px) rotate(121deg);
+  -o-transform: translate(-80px, 93px) rotate(121deg);
+}
+.measure-hand {
+  position: absolute;
+  transform: translate(255px, 255px);
+  -webkit-transform: translate(255px, 255px);
+  -moz-transform: translate(255px, 255px);
+  -ms-transform: translate(255px, 255px);
+  -o-transform: translate(255px, 255px);
+}
+
+.measure-hand::before {
+  content: "-----▸";
+  position: absolute;
+  color: black;
+  transform: translate(23px, -35px) rotate(-5deg);
+  -webkit-transform: translate(23px, -35px) rotate(-5deg);
+  -moz-transform: translate(23px, -35px) rotate(-5deg);
+  -ms-transform: translate(23px, -35px) rotate(-5deg);
+  -o-transform: translate(23px, -35px) rotate(-5deg);
+}
+
+.measure-hand::after {
+  content: "-----";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  color: black;
+  transform: translate(28px, -20px) rotate(90deg);
+  -webkit-transform: translate(28px, -20px) rotate(90deg);
+  -moz-transform: translate(28px, -20px) rotate(90deg);
+  -ms-transform: translate(28px, -20px) rotate(90deg);
+  -o-transform: translate(28px, -20px) rotate(90deg);
+}
+.measure-knee {
+  position: absolute;
+  transform: translate(285px, 320px) rotate(45deg);
+  -webkit-transform: translate(285px, 320px) rotate(45deg);
+  -moz-transform: translate(285px, 320px) rotate(45deg);
+  -ms-transform: translate(285px, 320px) rotate(45deg);
+  -o-transform: translate(285px, 320px) rotate(45deg);
+}
+
+.measure-knee::before {
+  content: "◂-----------";
+  position: absolute;
+  left: -15px;
+  top: 0px;
+  color: black;
+  transform: translate(-45px, 52px) rotate(-45deg);
+  -webkit-transform: translate(-45px, 52px) rotate(-45deg);
+  -moz-transform: translate(-45px, 52px) rotate(-45deg);
+  -ms-transform: translate(-45px, 52px) rotate(-45deg);
+  -o-transform: translate(-45px, 52px) rotate(-45deg);
+}
+
+.measure-knee::after {
+  content: "--------";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  color: black;
+  transform: translate(16px, 27px);
+  -webkit-transform: translate(16px, 27px);
+  -moz-transform: translate(16px, 27px);
+  -ms-transform: translate(16px, 27px);
+  -o-transform: translate(16px, 27px);
+}
+.measure-leg {
+  position: absolute;
+  transform: translate(70px, 350px);
+  -webkit-transform: translate(70px, 350px);
+  -moz-transform: translate(70px, 350px);
+  -ms-transform: translate(70px, 350px);
+  -o-transform: translate(70px, 350px);
+}
+
+.measure-leg::before {
+  content: "◂-------------------------------";
+  position: absolute;
+  left: -15px;
+  top: 0px;
+  width: 202px;
+  color: black;
+  transform: translate(-5px, -52px) rotate(90deg);
+  -webkit-transform: translate(-5px, -52px) rotate(90deg);
+  -moz-transform: translate(-5px, -52px) rotate(90deg);
+  -ms-transform: translate(-5px, -52px) rotate(90deg);
+  -o-transform: translate(-5px, -52px) rotate(90deg);
+}
+
+.measure-leg::after {
+  content: "-------------";
+  position: absolute;
+  width: 170px;
+  left: 73px;
+  top: 22px;
+  color: black;
+  transform: translate(-62px, 2px);
+  -webkit-transform: translate(-62px, 2px);
+  -moz-transform: translate(-62px, 2px);
+  -ms-transform: translate(-62px, 2px);
+  -o-transform: translate(-62px, 2px);
+}
+.measure-elbow {
+  position: absolute;
+  transform: translate(20px, 32px);
+  -webkit-transform: translate(20px, 32px);
+  -moz-transform: translate(20px, 32px);
+  -ms-transform: translate(20px, 32px);
+  -o-transform: translate(20px, 32px);
+}
+
+.measure-elbow::before {
+  content: "-----------▸";
+  position: absolute;
+  left: -15px;
+  top: 0px;
+  width: 202px;
+  color: black;
+  transform: translate(74px, 78px) rotate(33deg);
+  -webkit-transform: translate(74px, 78px) rotate(33deg);
+  -moz-transform: translate(74px, 78px) rotate(33deg);
+  -ms-transform: translate(74px, 78px) rotate(33deg);
+  -o-transform: translate(74px, 78px) rotate(33deg);
+}
+
+.measure-elbow::after {
+  content: "-------------";
+  position: absolute;
+  width: 170px;
+  left: 73px;
+  top: 22px;
+  color: black;
+  transform: translate(-62px, 2px);
+  -webkit-transform: translate(-62px, 2px);
+  -moz-transform: translate(-62px, 2px);
+  -ms-transform: translate(-62px, 2px);
+  -o-transform: translate(-62px, 2px);
+}
+.measure-scarf {
+  position: absolute;
+  transform: translate(0px, 220px) rotate(-30deg);
+  -webkit-transform: translate(0px, 220px) rotate(-30deg);
+  -moz-transform: translate(0px, 220px) rotate(-30deg);
+  -ms-transform: translate(0px, 220px) rotate(-30deg);
+  -o-transform: translate(0px, 220px) rotate(-30deg);
+}
+
+.measure-scarf::before {
+  content: "--------------------------▸";
+  position: absolute;
+  top: 0px;
+  width: 202px;
+  color: black;
+  transform: translate(133px, -13px) rotate(121deg);
+  -webkit-transform: translate(133px, -13px) rotate(121deg);
+  -moz-transform: translate(133px, -13px) rotate(121deg);
+  -ms-transform: translate(133px, -13px) rotate(121deg);
+  -o-transform: translate(133px, -13px) rotate(121deg);
+}
+
+.measure-scarf::after {
+  content: "-------------------------------------";
+  position: absolute;
+  width: 198px;
+  left: 73px;
+  top: 22px;
+  color: black;
+  transform: translate(-62px, 2px);
+  -webkit-transform: translate(-62px, 2px);
+  -moz-transform: translate(-62px, 2px);
+  -ms-transform: translate(-62px, 2px);
+  -o-transform: translate(-62px, 2px);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.buttons button {
+  background-color: #57c778;
+  color: white;
+}
+
+.data-table {
+  /* border-collapse: collapse; */
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.data-table th {
+  background-color: #57c778;
+  font-weight: bold;
+}
+
+.data-table td {
+  color: black;
+  background-color: #eee;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.data-table td:hover {
+  background-color: #57c778;
+  color: white;
+}
+
+.data-table .neck {
+  background-color: #eee;
+  color: black;
+}
+
+.data-table .shoulder {
+  background-color: #eee;
+  color: black;
+}
+
+.data-table .arm {
+  background-color: #eee;
+  color: black;
+}
+
+.data-table .hand {
+  background-color: #eee;
+  color: black;
+}
+
+.data-table .knee {
+  background-color: #eee;
+  color: black;
+}
+
+.data-table .leg {
+  background-color: #eee;
+  color: black;
+}
+
+.data-table .elbow {
+  background-color: #eee;
+  color: black;
+}
+
+.data-table .scarf {
+  background-color: #eee;
+  color: black;
+}
+
+.contact {
+  background: #57c778;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+@media (max-width: 470px) {
+  .contact {
+    flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+.contact h3 span {
+  color: black;
+}
